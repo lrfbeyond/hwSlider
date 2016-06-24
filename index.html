@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="hwSlide.js,内容滑动插件" />
+<meta name="description" content="Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例" />
+<title>演示：hwSlide.js-内容滑动切换效果插件</title>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link type="text/css"  rel="stylesheet" href="css/hwslider.css" />
+<style>
+#hwslider ul li:last-child{background: #f90; text-align: center;}
+#hwslider ul li:last-child h4{height:42px; margin: 20% auto;font-size: 48px; color:#fff;}	
+.intro{position:absolute; left:20%; top:20%; width:42%; min-width: 240px; background: rgba(0,0,0,.3); padding: 6px;z-index: 2; color: #fff;line-height: 26px}
+#otherhwSlider ul li:first-child{background:#f90;text-align: center;}
+#otherhwSlider h4{height:42px; margin: 16% auto;font-size: 1.5rem; color:#fff;}
+#otherhwSlider p{line-height:24px;}
+#otherhwSlider pre{padding-top:10%;padding-left:15%;display:block;height:100%;background:#f00; color: #fff}
+#otherhwSlider ul li:last-child{background:#360;color:#fff; text-align: center;}
+</style>
+</head>
+<body>
+<div class="container">
+	<header>
+		<div class="row">
+			<div class="col-md-3 col-xs-12"><h1 class="logo"><a href="http://www.helloweba.com" title="返回helloweba首页">helloweba</a></h1></div>
+			<div class="col-md-9 text-right"></div>
+		</div>
+	</header>
+	<div class="row main">
+		<h2 class="top_title"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><a href="http://www.helloweba.com/view-blog-372.html">hwSlide.js-内容滑动切换效果插件</a></h2>
+		<div class="col-md-12">
+			<div id="hwslider" class="hwslider">
+			    <ul>
+			        <li><div class="intro"><strong>Helloweba欢迎您！</strong><p>这是一个内容滑动切换效果，支持触控滑动，响应式滑块。</p></div><a href="#"><img src="images/s1.jpg" alt=""></a></li>
+			        <li><a href="#"><img src="images/s2.jpg" alt=""></a></li>
+			        <li><h4>hwSlider.js</h4></li>
+			    </ul>
+			</div>
+		</div>
+		<div class="col-md-6 col-md-offset-3">
+			<div id="otherhwSlider" class="hwslider">
+			    <ul>
+			    	<li><h4>hwSlider.js</h4></li>
+			    	
+			        <li>
+					<pre>
+$("#otherhwSlider").hwSlider({
+	width: 500,
+	height: 200
+});</pre>
+			        </li>
+			        <li><h4>Helloweba欢迎您</h4></li>
+			    </ul>
+			</div>
+		</div>
+		
+
+
+	</div>
+	<footer>
+		<p>Powered by helloweba.com  允许转载、修改和使用本站的DEMO，但请注明出处：<a href="http://www.helloweba.com">www.helloweba.com</a></p>
+	</footer>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.hwSlider.min.js"></script>
+<script>
+$(function(){
+	$("#hwslider").hwSlider({
+		autoPlay: true,
+		arrShow: true,
+		dotShow: true,
+		touch: true
+	});
+	$("#otherhwSlider").hwSlider({
+		width: 500,
+		height: 200,
+		afterSlider: function(){
+			console.log('滑动');
+		}
+	});
+});
+</script>
+</body>
+</html>
